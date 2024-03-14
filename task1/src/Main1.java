@@ -10,7 +10,8 @@ public class Main1 {
         try {
             //блок try будет выполнятся до первой возникшей исключительной ситуации
             res = x1 / x2;
-        } catch (ArithmeticException exception){
+        } catch (ArithmeticException exception) {
+            //catch работает только при возникновении исключительной ситуации
             System.out.println(exception.getMessage());
             System.out.println("------------------------");
             //toString() дает информацию о имени класса и пути к нему + сообщение
@@ -23,7 +24,10 @@ public class Main1 {
             System.out.println("никто не запрещает писать свои сообщения о возникшей ситуации ");
             // а твкже писать какой либо код
             x2 = 1; //в случае ввода 0 переприсвоим на 1
+        }finally {
+            System.out.println("finally работет в любой ситуации: была ошибка или нет");
 
         }
+        System.out.println("res =" + res);
     }
 }
